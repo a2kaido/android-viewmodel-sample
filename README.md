@@ -3,6 +3,8 @@
 ## overview
 It's a sample project for ViewModel in Architecture Components.
 
+![](image/Screenshot.png)
+
 ## use arch package alpha3
 ```
 // arch
