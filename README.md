@@ -3,7 +3,7 @@
 ## overview
 It's a sample project for ViewModel in Architecture Components.
 
-![](image/Screenshot.png =250x)
+<img src="image/Screenshot.png" width="250px" />
 
 ## use arch package alpha3
 ```
