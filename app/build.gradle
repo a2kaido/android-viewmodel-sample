@@ -35,12 +35,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
+    // arch
     compile "android.arch.lifecycle:runtime:1.0.0-alpha3"
     compile "android.arch.lifecycle:extensions:1.0.0-alpha3"
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha3"
-
-    // okhttp
-    compile 'com.squareup.okhttp3:okhttp:3.8.0'
 
     // retrofit
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
