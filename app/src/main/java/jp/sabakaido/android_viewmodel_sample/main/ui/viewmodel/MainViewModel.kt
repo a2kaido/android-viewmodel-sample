@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainViewModel : ViewModel() {
     private val githubRepos = MutableLiveData<List<GithubRepos>>()
 
-    fun getGithubRepos(): LiveData<List<GithubRepos>>? {
+    fun getGithubRepos(): LiveData<List<GithubRepos>> {
         return githubRepos
     }
 
@@ -36,7 +36,7 @@ class MainViewModel : ViewModel() {
 
             override fun onResponse(call: Call<List<GithubRepos>>?, response: Response<List<GithubRepos>>?) {
                 response.let {
-                    githubRepos?.value = response?.body()
+                    githubRepos.value = response?.body()
                 }
             }
         })

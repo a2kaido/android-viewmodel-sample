@@ -30,7 +30,7 @@ class MainActivity : LifecycleActivity() {
 
         viewModel
                 .getGithubRepos()
-                ?.observe(this, Observer {
+                .observe(this, Observer {
                     adapter = MainRecyclerAdapter(this, it)
                     recyclerView.adapter = adapter
                 })
