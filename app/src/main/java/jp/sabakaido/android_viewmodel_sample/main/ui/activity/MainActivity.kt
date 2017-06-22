@@ -12,24 +12,29 @@ import jp.sabakaido.android_viewmodel_sample.main.ui.viewmodel.MainViewModel
 
 class MainActivity : LifecycleActivity() {
     private var adapter: MainRecyclerAdapter? = null
-    lateinit private var recyclerView: RecyclerView
+    private val recyclerView: RecyclerView by lazy {
+        findViewById<RecyclerView>(R.id.recyclerView)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        bind()
+        observeViewModelAndFetchData()
     }
 
-    fun bind() {
-        ViewModelProviders.of(this).get(MainViewModel::class.java)
+    private fun observeViewModelAndFetchData() {
+        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
+        viewModel
                 .getGithubRepos()
                 ?.observe(this, Observer {
                     adapter = MainRecyclerAdapter(this, it)
                     recyclerView.adapter = adapter
                 })
+
+        viewModel.fetchGithubRespos("a2kaido")
     }
 }
